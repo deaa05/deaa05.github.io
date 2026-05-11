@@ -3,28 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Catálogo de máquinas del tiempo para explorar el pasado y el futuro.">
     <title>Temporal Voyages - Proyecto NN</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f4; }
-        header { background: #001f3f; color: white; padding: 1rem; text-align: center; }
-        nav ul { list-style: none; padding: 0; display: flex; justify-content: center; background: #333; }
-        nav ul li { margin: 0 15px; }
-        nav ul li a { color: white; text-decoration: none; }
-        main { padding: 20px; max-width: 1000px; margin: auto; }
-        .catalogo { display: flex; gap: 20px; flex-wrap: wrap; justify-content: space-around; }
-        .card { background: white; border: 1px solid #ddd; padding: 15px; width: 280px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .precio { font-weight: bold; color: #2c3e50; font-size: 1.2em; }
-        footer { text-align: center; padding: 20px; background: #001f3f; color: white; margin-top: 20px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #eee; }
+        :root {
+            --primary: #001f3f;
+            --secondary: #3a4d60;
+            --accent: #0074D9;
+            --light: #f4f4f4;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; background-color: var(--light); color: #333; }
+        header { background: var(--primary); color: white; padding: 2rem; text-align: center; border-bottom: 4px solid var(--accent); }
+        nav { background: #333; sticky: top; }
+        nav ul { list-style: none; padding: 0; display: flex; justify-content: center; margin: 0; }
+        nav ul li a { color: white; text-decoration: none; padding: 15px 20px; display: block; transition: 0.3s; }
+        nav ul li a:hover { background: var(--accent); }
+        main { padding: 20px; max-width: 1100px; margin: auto; }
+        
+        .section-title { border-left: 5px solid var(--accent); padding-left: 15px; margin-top: 40px; }
+        
+        /* Estilos del Catálogo */
+        .catalogo { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+        .card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-top: 5px solid var(--accent); }
+        .precio { font-size: 1.5em; color: var(--primary); font-weight: bold; margin-top: 10px; }
+
+        /* Estilo de la Sección Tecnología */
+        .tech-box { background: #e9ecef; border-radius: 8px; padding: 25px; margin-top: 20px; display: flex; align-items: center; gap: 20px; }
+        .tech-content { flex: 1; }
+        .btn-tech { 
+            background: var(--accent); 
+            color: white; 
+            padding: 12px 25px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+        .btn-tech:hover { transform: scale(1.05); background: #0056b3; }
+
+        footer { text-align: center; padding: 30px; background: var(--primary); color: white; margin-top: 50px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: var(--secondary); color: white; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>TEMPORAL VOYAGES</h1>
+        <p>Expertos en Desplazamiento Cuántico y Exploración Histórica</p>
     </header>
 
     <nav>
@@ -38,70 +65,76 @@
 
     <main>
         <section id="inicio">
-            <h2>Análisis del Proyecto</h2>
-            <p>La Máquina del Tiempo es un producto tecnológico real diseñado para personas que desean conocer las maravillas del pasado y el futuro, permitiendo observar la evolución de la humanidad y la Tierra[cite: 12].</p>
+            <h2 class="section-title">Análisis del Proyecto</h2>
+            <p><strong>Temporal Voyages</strong> es la primera plataforma comercial que permite el acceso a la tecnología de curvatura espacio-temporal. Nuestro objetivo es democratizar la observación de eventos históricos y futuros bajo protocolos de seguridad estricta para evitar paradojas.</p>
         </section>
 
         <section id="catalogo">
-            <h2>Catálogo de Máquinas del Tiempo</h2>
+            <h2 class="section-title">Nuestras Unidades de Viaje</h2>
             <div class="catalogo">
-                
                 <div class="card">
-                    <h3>Chronos One</h3>
-                    <p>Viaje individual al pasado reciente.</p>
-                    <ul>
-                        <li>Capacidad: 1 Pax</li>
-                        <li>Rango: 500 años</li>
-                    </ul>
-                    <p class="precio">$12.500 USD</p>
+                    <h3>Chronos One (V1)</h3>
+                    <p>Ideal para investigadores solitarios. Sistema de anclaje magnético para evitar derivas temporales.</p>
+                    <p class="precio">$12,500.00</p>
                 </div>
-
                 <div class="card">
-                    <h3>Temporal Gate</h3>
-                    <p>Viaje grupal a eras ancestrales.</p>
-                    <ul>
-                        <li>Capacidad: 4 Pax</li>
-                        <li>Rango: 5M de años</li>
-                    </ul>
-                    <p class="precio">$28.900 USD</p>
+                    <h3>Temporal Gate (V2)</h3>
+                    <p>Capacidad para 4 personas con soporte vital avanzado y blindaje contra radiación gamma.</p>
+                    <p class="precio">$28,900.00</p>
                 </div>
-
                 <div class="card">
-                    <h3>Future Vision</h3>
-                    <p>Observador portátil del futuro próximo.</p>
-                    <ul>
-                        <li>Capacidad: 1 Pax</li>
-                        <li>Rango: 100 años</li>
-                    </ul>
-                    <p class="precio">$7.200 USD</p>
+                    <h3>Future Watcher</h3>
+                    <p>Tecnología de "sonda visual" que no requiere desplazamiento físico, solo transmisión de datos.</p>
+                    <p class="precio">$7,200.00</p>
                 </div>
+            </div>
+        </section>
 
+        <section id="tecnologia">
+            <h2 class="section-title">Fundamentos Tecnológicos</h2>
+            <div class="tech-box">
+                <div class="tech-content">
+                    <h3>Motor de Curvatura de Alcubierre Modificado</h3>
+                    <p>Nuestras máquinas operan bajo el principio de la <strong>Singularidad Controlada</strong>. Utilizamos cristales de dilatación para curvar el tejido del espacio-tiempo, permitiendo que la cabina permanezca en una "burbuja de presente" mientras el entorno se desplaza cronológicamente.</p>
+                    <p><em>¿Quieres saber cómo funciona la física detrás de nuestros motores?</em></p>
+                    <a href="https://es.wikipedia.org/wiki/M%C3%A9trica_de_Alcubierre" target="_blank" class="btn-tech">Ver Documentación Técnica</a>
+                </div>
             </div>
         </section>
 
         <section>
-            <h2>Comparativa Técnica</h2>
+            <h2 class="section-title">Especificaciones Técnicas</h2>
             <table>
-                <tr>
-                    <th>Modelo</th>
-                    <th>Tamaño</th>
-                    <th>Eficiencia</th>
-                </tr>
-                <tr>
-                    <td>Chronos One</td>
-                    <td>2m x 1m</td>
-                    <td>Alta</td>
-                </tr>
-                <tr>
-                    <td>Temporal Gate</td>
-                    <td>3m x 3m</td>
-                    <td>Media-Alta</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Descripción</th>
+                        <th>Estado de Prueba</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Estabilizador Cuántico</td>
+                        <td>Evita la fragmentación atómica durante el salto.</td>
+                        <td>Operativo</td>
+                    </tr>
+                    <tr>
+                        <td>Escudo de Paradojas</td>
+                        <td>Inhibe acciones que puedan alterar la línea temporal.</td>
+                        <td>Certificado</td>
+                    </tr>
+                </tbody>
             </table>
         </section>
     </main>
 
     <footer>
+        <p>&copy; 2026 Temporal Voyages | Guayaquil, Ecuador</p>
+        <p>Proyecto Universitario - Facultad de Sistemas</p>
+    </footer>
+
+</body>
+</html>
         <p>&copy; 2026 Temporal Voyages - Todos los derechos reservados.</p>
     </footer>
 
